@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Каталог товаров</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <ul class="navbar-nav nav">
+            <li class="active"><a href="#">Каталог товаров</a></li>
+            <li><a href="#">Корзина</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-right nav">
+            <li><a href="#" data-method="post">Выход</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="main-search">
+        <form id="catalog-search-form" class="form" action="productlist.json" method="get">
+            <input type="text" class="form-control typeahead"
+               name="keyword" autocomplete="off" spellcheck="false" placeholder="Универсальный поиск">
+        </form>
+    </div>
+
+    <h1>Product list</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Фото</th>
+            <th>Название</th>
+            <th colspan="2">Заказать</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="to-card-block">
+            <td>1</td>
+            <td><img src="img/4.jpg" alt=""></td>
+            <td>Product name</td>
+            <td class="products-table-ammount">
+                <div class="input-group">
+                    <input type="number" class="form-control input-sm product-ammount" value="1" step="1" min="1" data-key="{{id}}">
+                    <span class="input-group-addon">шт.</span>
+                </div>
+            </td>
+            <td>
+                <button class="btn btn-default btn-danger btn-sm add-to-basket" type="button">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                </button>
+            </td>
+        </tr>
+        <tr class="to-card-block">
+            <td>2</td>
+            <td><img src="img/1.jpg" alt=""></td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, cumque distinctio dolorum eum id in ipsa, iste maiores, mollitia nam natus nemo omnis perspiciatis provident rem repellendus soluta temporibus! Cupiditate fuga harum, ipsa itaque magni nisi omnis perspiciatis repellat sapiente sequi sunt voluptas. Aperiam distinctio est et in ipsa libero minus modi natus non nulla praesentium ratione, veniam vero. Aliquid at, autem cum, ducimus, fuga ipsa maiores molestiae quae quia quo recusandae saepe sed soluta tempora unde vel vero voluptatibus. A accusantium aliquid asperiores consequuntur, debitis deleniti, dignissimos dolorem et laborum nam nemo omnis porro qui quisquam quos saepe tempore.</td>
+            <td class="products-table-ammount">
+                <div class="input-group">
+                    <input type="number" class="form-control input-sm product-ammount" value="1" step="1" min="1" data-key="{{id}}">
+                    <span class="input-group-addon">шт.</span>
+                </div>
+            </td>
+            <td>
+                <button class="btn btn-default btn-danger btn-sm add-to-basket" type="button">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script id="result-template" type="text/x-handlebars-template">
+    <div class="tt-suggestion u-cf">
+        <img class="tt-suggestion-image" src="{{image_url}}">
+        <div class="tt-suggestion-details">
+            <div class="tt-suggestion-name">{{supplier_id}}, {{name}}</div>
+            <div class="tt-suggestion-stats">
+                {{#if price}}<div class="tt-suggestion-stat"><span class="tt-suggestion-stat-label">Цена:</span> {{price}}</div>{{/if}}
+            </div>
+        </div>
+    </div>
+</script>
+<script id="empty-template" type="text/x-handlebars-template">
+    <div class="tt-empty-message">Поиск не дал результатов</div>
+</script>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+<script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

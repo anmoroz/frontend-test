@@ -1,0 +1,107 @@
+.products-table-ammount .input-group {
+    width: 80px;
+}
+.products-table-ammount input {
+    padding: 0 2px 0 8px; font-weight: bold;
+}
+.products-table-ammount .input-group-addon {
+    padding: 0 2px;
+    color: #808080;
+    font-size: 12px;
+    width: 20px;
+}
+
+.twitter-typeahead {
+    width: 100%;
+}
+.tt-menu {
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 4px 8px 1px rgba(124,198,255, 0.5);
+    display: none;
+    left: 2.5%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 95%;
+    width: 100%;
+    z-index: 100;
+}
+.tt-hint {
+    color: #999;
+}
+.tt-highlight {
+    background-color: #fff2a8;
+}
+.tt-dropdown-menu {
+    max-height: 600px;
+    overflow-y: auto;
+}
+.tt-menu.is-open {
+    display: block;
+}
+.tt-selectable + .tt-selectable {
+    border-top: 1px solid #ccd6dd;
+}
+.tt-suggestion {
+    padding: 8px;
+    position: relative;
+    color: #000;
+}
+.tt-suggestion-image {
+    border: 2px solid #ccd6dd;
+    border-radius: 5px;
+    height: 52px;
+    left: 8px;
+    position: absolute;
+    top: 8px;
+    width: 52px;
+}
+.tt-suggestion-add {
+    right: 8px;
+    position: absolute;
+    top: 24px;
+    width: 120px;
+    padding: 0 12px;
+}
+.tt-suggestion-details {
+    min-height: 60px;
+    padding-left: 60px;
+    padding-right: 130px;
+}
+.tt-suggestion-name {
+    display: inline-block;
+}
+.tt-suggestion-name {
+    font-weight: 700;
+}
+.tt-suggestion-description {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 5px;
+}
+.tt-suggestion-stats {
+    text-align: right;
+}
+.tt-suggestion-stat {
+    display: inline-block;
+    font-size: 11px;
+    line-height: 16px;
+}
+.tt-suggestion-stat-label {
+    font-weight: 500;
+}
+.tt-suggestion-stat + .tt-suggestion-stat {
+    margin-left: 5px;
+}
+.tt-suggestion:hover, .tt-suggestion.is-active {
+    background: #dfefff none repeat scroll 0 0;
+}
+
+.tt-empty-message {
+    font-size: 24px;
+    line-height: 30px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    color: #808080;
+}
