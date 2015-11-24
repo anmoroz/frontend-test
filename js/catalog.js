@@ -17,7 +17,7 @@
             });
         },
         addProductToBasket: function($obj) {
-            var ammount = $obj.closest('.to-card-block').find('input.product-ammount').val()
+            var ammount = $obj.closest('.js-to-card-block').find('input.product-ammount').val()
                 , message = 'Add to basket ' + ammount + ' items';
             alert(message);
         },
@@ -66,6 +66,52 @@
                 text = window.JSON ? JSON.stringify(args) : '';
                 console.log(type, text);
             });*/
+
+            var typeaheadInputCtrl= this.typeaheadInput.data('tt-typeahead')
+            var isSelectPrevented
+            var isClosePrevented
+
+            this.typeaheadInput.on('typeahead:active', function (evt) {
+                typeaheadInputCtrl.menu.$node.off('mousedown')
+                isSelectPrevented= false
+                isClosePrevented= false
+            })
+
+            this.typeaheadInput.on('typeahead:beforeselect', function (evt) {
+                if (isSelectPrevented) {
+                    evt.preventDefault()
+                }
+            })
+
+            this.typeaheadInput.on('typeahead:beforeclose', function (evt) {
+                if (isClosePrevented) {
+                    evt.preventDefault()
+                }
+            })
+
+            this.typeaheadInput.on('typeahead:render', function () {
+                $('.tt-suggestion-actions input')
+                    .on('mousedown focus', function (evt) {
+                        isSelectPrevented= true
+                        isClosePrevented= true
+                    })
+                    .on('blur', function (evt) {
+                        isSelectPrevented= false
+                        isClosePrevented= false
+                    })
+                ;
+                $('.tt-suggestion-actions button')
+                    .on('mousedown focus', function (evt) {
+                        isSelectPrevented= true
+                        isClosePrevented= true
+                    })
+                    .on('blur', function (evt) {
+                        isSelectPrevented= false
+                        isClosePrevented= false
+                    })
+                ;
+            })
+
         }
     };
     catalog.initialize();

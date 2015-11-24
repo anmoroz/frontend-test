@@ -41,7 +41,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr class="to-card-block">
+        <tr class="to-card-block js-to-card-block">
             <td>1</td>
             <td><img src="img/4.jpg" alt=""></td>
             <td>Product name</td>
@@ -57,7 +57,7 @@
                 </button>
             </td>
         </tr>
-        <tr class="to-card-block">
+        <tr class="to-card-block js-to-card-block">
             <td>2</td>
             <td><img src="img/1.jpg" alt=""></td>
             <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, cumque distinctio dolorum eum id in ipsa, iste maiores, mollitia nam natus nemo omnis perspiciatis provident rem repellendus soluta temporibus! Cupiditate fuga harum, ipsa itaque magni nisi omnis perspiciatis repellat sapiente sequi sunt voluptas. Aperiam distinctio est et in ipsa libero minus modi natus non nulla praesentium ratione, veniam vero. Aliquid at, autem cum, ducimus, fuga ipsa maiores molestiae quae quia quo recusandae saepe sed soluta tempora unde vel vero voluptatibus. A accusantium aliquid asperiores consequuntur, debitis deleniti, dignissimos dolorem et laborum nam nemo omnis porro qui quisquam quos saepe tempore.</td>
@@ -78,13 +78,22 @@
 </div>
 
 <script id="result-template" type="text/x-handlebars-template">
-    <div class="tt-suggestion u-cf">
+    <div class="tt-suggestion u-cf js-to-card-block">
         <img class="tt-suggestion-image" src="{{image_url}}">
         <div class="tt-suggestion-details">
             <div class="tt-suggestion-name">{{supplier_id}}, {{name}}</div>
             <div class="tt-suggestion-stats">
                 {{#if price}}<div class="tt-suggestion-stat"><span class="tt-suggestion-stat-label">Цена:</span> {{price}}</div>{{/if}}
             </div>
+        </div>
+        <div class="tt-suggestion-actions products-table-ammount">
+            <div class="input-group">
+                <input type="number" class="form-control input-sm product-ammount" value="3" step="1" min="1" data-key="{{id}}">
+                <span class="input-group-addon">шт.</span>
+            </div>
+            <button class="btn btn-default btn-danger btn-sm add-to-basket" type="button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            </button>
         </div>
     </div>
 </script>
