@@ -12,7 +12,7 @@
     "url": "git+https://github.com/anmoroz/frontend-test.git"
   },
   "authors": [
-    "Andrey Morozov"
+    "Andrey Morozov",
     "Michael Furutin"
   ],
   "private": true,
