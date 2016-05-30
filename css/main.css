@@ -66,7 +66,7 @@
 .tt-suggestion-details {
     min-height: 60px;
     padding-left: 60px;
-    padding-right: 130px;
+    padding-right: 145px;
 }
 .tt-suggestion-name {
     display: inline-block;
@@ -96,6 +96,32 @@
 .tt-suggestion:hover, .tt-suggestion.is-active {
     background: #dfefff none repeat scroll 0 0;
 }
+.tt-add-to-card {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 138px;
+    padding: 24px 0 0;
+}
+.tt-add-to-card .input-group,
+.tt-input-group .add-to-basket {
+    float: left;
+}
+.tt-add-to-card .input-group {
+    width: 80px;
+    margin-right: 16px;
+}
+.tt-add-to-card .input-group input {
+    font-weight: bold;
+}
+.tt-add-to-card .input-group-addon {
+    padding: 0 2px;
+    color: #808080;
+    font-size: 12px;
+    width: 20px;
+}
+
+
 
 .tt-empty-message {
     font-size: 24px;
