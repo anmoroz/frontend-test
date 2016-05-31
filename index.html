@@ -86,6 +86,15 @@
                 {{#if price}}<div class="tt-suggestion-stat"><span class="tt-suggestion-stat-label">Цена:</span> {{price}}</div>{{/if}}
             </div>
         </div>
+        <div class="tt-add-to-card">
+            <div class="input-group">
+                <input type="number" class="form-control input-sm product-ammount" value="1" step="1" min="1" data-key="{{id}}">
+                <span class="input-group-addon">шт.</span>
+            </div>
+            <button class="btn btn-default btn-danger btn-sm add-to-basket" type="button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            </button>
+        </div>
     </div>
 </script>
 <script id="empty-template" type="text/x-handlebars-template">
